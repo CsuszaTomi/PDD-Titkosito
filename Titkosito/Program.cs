@@ -15,6 +15,11 @@ namespace Titkosito
             string kulcs = "2573";
             Console.Write("Add meg a szöveget amit titkosítani szeretnél: ");
             string szoveg = Console.ReadLine();
+            while (string.Empty == szoveg)
+            {
+                Console.Write("Rosszul adtad meg a szöveget! Add meg újra: ");
+                szoveg = Console.ReadLine();
+            }
             szoveg = szoveg.ToLower();
             Console.WriteLine($"Az átalakított szöveg: {Titkositas(abc, kulcs, szoveg)}");
         }
