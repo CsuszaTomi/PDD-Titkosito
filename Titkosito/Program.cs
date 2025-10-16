@@ -13,6 +13,7 @@ namespace Titkosito
         {
             string abc = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz";
             string kulcs = "2573";
+            SzovegKiemelo(30,"Titkosító");
             Console.Write("Add meg a szöveget amit titkosítani szeretnél: ");
             string szoveg = Console.ReadLine();
             while (string.Empty == szoveg)
@@ -22,6 +23,21 @@ namespace Titkosito
             }
             szoveg = szoveg.ToLower();
             Console.WriteLine($"Az átalakított szöveg: {Titkositas(abc, kulcs, szoveg)}");
+        }
+
+        private static void SzovegKiemelo(int szovegkiemelo,string szoveg)
+        {
+            for (int i = 0; i < szovegkiemelo; i++)
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine();
+            Console.WriteLine(szoveg.PadLeft((szovegkiemelo + szoveg.Length) / 2));
+            for (int i = 0; i < szovegkiemelo; i++)
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine();
         }
 
         private static string Titkositas(string abc, string kulcs, string szoveg)
