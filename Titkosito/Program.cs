@@ -49,6 +49,7 @@ namespace Titkosito
             {
                 titkositott += " " + szavak[i];
             }
+            titkositott = titkositott[0].ToString().ToUpper() + titkositott.Substring(1);
             return titkositott;
         }
     }
